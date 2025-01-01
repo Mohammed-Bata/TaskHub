@@ -1,0 +1,46 @@
+﻿@model Task_mangement_Web.Models.Dto.TaskDto
+
+@{
+    ViewData["Title"] = "Delete Task";
+}
+
+<h1>Delete Task</h1>
+
+<h3>Are you sure you want to delete this Task?</h3>
+<div>
+    <hr />
+    <form asp-action="DeleteTask">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Id" class="control-label" style="font-size:20px"></label>
+            <input asp-for="Id" disabled class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Title" class="control-label" style="font-size:20px"></label>
+            <input asp-for="Title" disabled class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label" style="font-size:20px"></label>
+            <input asp-for="Description" disabled class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Category.Name" class="control-label" style="font-size:20px">Category</label>
+            <input asp-for="Category.Name" disabled class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="CreatedAt" class="control-label" style="font-size:20px"></label>
+            <input asp-for="CreatedAt" disabled class="form-control" />
+        </div>
+        <div class="form-group">
+            <input asp-for="IsCompleted" disabled class="form-check-input" />
+            <label asp-for="IsCompleted" class="form-check-label"></label>
+        </div>
+        
+        <div class="form-group pb-3">
+            <input type="submit" value="Delete" class="btn btn-primary" />
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+    </form>
+</div>
+
